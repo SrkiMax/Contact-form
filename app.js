@@ -42,18 +42,24 @@ const validateInputs = () => {
         if (input.value.trim() === "") {
             input.classList.add("input-required");
             error.style.display = "block";
+            // Show on screenreader that the input is invalid
+            input.setAttribute("aria-invalid", "true");
         } else {
             // Additional check for email
             if (input === email && !isValidEmail(input.value.trim())) {
                 input.classList.add("input-required");
                 error.style.display = "block";
                 error.textContent = "Please enter a valid email address";
+                // Show on screenreader that the input is invalid
+                input.setAttribute("aria-invalid", "true");
 
                 // Set placeholder to guide user
                 input.placeholder = "email#example.com";
             } else {
                 input.classList.remove("input-required");
                 error.style.display = "none";
+
+                input.removeAttribute("aria-invalid");
 
                 // Reset placeholder if it was changed
                 if (input === email) {
@@ -136,3 +142,34 @@ supportRequestRadio.addEventListener("change", () => {
         genEnquiryDiv.style.backgroundColor = "transparent";
     }
 });
+
+
+
+/*Trap focus so keyboard user can not tab out of the form */
+
+const trapFocus = (container) => {
+    const focusableSelectors = 'input, button, textarea';
+    const focusableEls = container.querySelectorAll(focusableSelectors);
+    const firstEl = focusableEls[0];
+    const lastEl = focusableEls[focusableEls.length - 1];
+
+    container.addEventListener('keydown', (e) => {
+        const isTab = e.key === 'Tab' || e.keyCode === 9;
+        if (!isTab) return;
+
+        if (e.shiftKey) { // Shift + Tab
+            if (document.activeElement === firstEl) {
+                e.preventDefault();
+                lastEl.focus();
+            }
+        } else { // Tab
+            if (document.activeElement === lastEl) {
+                e.preventDefault();
+                firstEl.focus();
+            }
+        }
+    });
+};
+
+// Trap focus on the form
+trapFocus(form);
