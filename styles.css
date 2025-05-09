@@ -269,7 +269,8 @@ input[type="radio"]:checked {
 }
 
 .btn:focus {
-    background-color: var(--Green-600);
+    background-color: var(--Green-dark);
+    color: white;
 }
 
 .message-div {
@@ -301,6 +302,15 @@ input[type="radio"]:checked {
 .input-required {
     border: 1px solid var(--Red-error) !important;
 }
+
+/*
+input:focus,
+textarea:focus {
+    outline: none; // Removes the default orange outline
+    
+    border: 1px solid var(--Green-600);
+}
+*/
 
 
 @media(max-width: 500px) {
