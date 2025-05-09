@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Contact form</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="bootstrap-5.3.5-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+
+
+</head>
+
+<body>
+
+  <main class="container">
+    <form action="">
+      <header>
+        <h1 class="heading">Contact Us</h1>
+      </header>
+      <section class="name-div">
+        <div class="first-name-div">
+          <label for="first-name">First Name *</label>
+          <input type="text" id="first-name" required>
+          <p class="error error-first-name">This field is required</p>
+        </div>
+
+        <div class="last-name-div">
+          <label for="last-name">Last Name *</label>
+          <input type="text" id="last-name" required>
+          <p class="error error-last-name">This field is required</p>
+        </div>
+      </section>
+      <section class="email-section">
+        <label for="email">Email Address *</label>
+        <input type="email" id="email" required>
+        <p class="error error-email">Please enter a valid email address</p>
+
+      </section>
+
+      <section class="query-type-div">
+        <fieldset class="radio-btns">
+          <legend class="body-sm-regular">Query Type *</legend>
+          <div class="two-radios">
+            <div class="general-enquiry-div">
+              <input type="radio" name="query-type" id="gen-enquiry" required>
+              <label for="gen-enquiry">General Enquiry</label>
+            </div>
+
+            <div class="support-request-div">
+              <input type="radio" name="query-type" id="support-req" required>
+              <label for="support-req">Support Request</label>
+            </div>
+
+          </div>
+
+        </fieldset>
+        <p class="error error-query">Please select a query type</p>
+
+      </section>
+
+      <section class="message-section">
+        <label for="textarea">Message *</label>
+        <textarea name="" id="textarea" required></textarea>
+        <p class="error error-textarea">This field is required</p>
+      </section>
+
+      <section class="check-section">
+        <div class="checkbox">
+          <input type="checkbox" name="consent" id="consent" required>
+          <label for="consent">I consent to being contacted by the team *</label>
+        </div>
+        <p class="error error-consent">To submit this form, please consent to being contacted</p>
+      </section>
+
+      <div class="d-grid">
+
+        <button class="btn body-md-bold" type="button">Submit</button>
+      </div>
+
+
+
+    </form>
+    <div class="message-div">
+      <div class="message-sent">
+        <img src="assets/images/icon-success-check.svg" alt="">
+        <h3 class="body-md-bold">Message Sent!</h3>
+      </div>
+      <p>Thanks for completing the form. We'll be in touch soon!</p>
+    </div>
+
+
+  </main>
+
+
+  <script src="bootstrap-5.3.5-dist/js/bootstrap.min.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
