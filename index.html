@@ -31,20 +31,20 @@
       <section class="name-div">
         <div class="first-name-div">
           <label for="first-name">First Name *</label>
-          <input type="text" id="first-name" required>
-          <p class="error error-first-name">This field is required</p>
+          <input type="text" id="first-name" aria-describedby="error-first-name" required>
+          <p class="error error-first-name" id="error-first-name" role="alert">This field is required</p>
         </div>
 
         <div class="last-name-div">
           <label for="last-name">Last Name *</label>
-          <input type="text" id="last-name" required>
-          <p class="error error-last-name">This field is required</p>
+          <input type="text" id="last-name" aria-describedby="error-last-name" required>
+          <p class="error error-last-name" id="error-last-name" role="alert">This field is required</p>
         </div>
       </section>
       <section class="email-section">
         <label for="email">Email Address *</label>
-        <input type="email" id="email" required>
-        <p class="error error-email">Please enter a valid email address</p>
+        <input type="email" id="email" aria-describedby="error-email" required>
+        <p class="error error-email" id="error-email" role="alert">Please enter a valid email address</p>
 
       </section>
 
@@ -53,34 +53,35 @@
           <legend class="body-sm-regular">Query Type *</legend>
           <div class="two-radios">
             <div class="general-enquiry-div">
-              <input type="radio" name="query-type" id="gen-enquiry" required>
+              <input type="radio" name="query-type" id="gen-enquiry" aria-describedby="error-query" required>
               <label for="gen-enquiry">General Enquiry</label>
             </div>
 
             <div class="support-request-div">
-              <input type="radio" name="query-type" id="support-req" required>
+              <input type="radio" name="query-type" id="support-req" aria-describedby="error-query" required>
               <label for="support-req">Support Request</label>
             </div>
 
           </div>
 
         </fieldset>
-        <p class="error error-query">Please select a query type</p>
+        <p class="error error-query" id="error-query" role="alert">Please select a query type</p>
 
       </section>
 
       <section class="message-section">
         <label for="textarea">Message *</label>
-        <textarea name="" id="textarea" required></textarea>
-        <p class="error error-textarea">This field is required</p>
+        <textarea name="" id="textarea" aria-describedby="error-textarea" required></textarea>
+        <p class="error error-textarea" id="error-textarea" role="alert">This field is required</p>
       </section>
 
       <section class="check-section">
         <div class="checkbox">
-          <input type="checkbox" name="consent" id="consent" required>
+          <input type="checkbox" name="consent" id="consent" aria-describedby="error-consent" required>
           <label for="consent">I consent to being contacted by the team *</label>
         </div>
-        <p class="error error-consent">To submit this form, please consent to being contacted</p>
+        <p class="error error-consent" id="error-consent" role="alert">To submit this form, please consent to being
+          contacted</p>
       </section>
 
       <div class="d-grid">
@@ -91,9 +92,9 @@
 
 
     </form>
-    <div class="message-div">
+    <div class="message-div" role="alert" aria-live="polite">
       <div class="message-sent">
-        <img src="assets/images/icon-success-check.svg" alt="">
+        <img src="assets/images/icon-success-check.svg" alt="Success icon">
         <h3 class="body-md-bold">Message Sent!</h3>
       </div>
       <p>Thanks for completing the form. We'll be in touch soon!</p>
